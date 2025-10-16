@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Details - Moorepay</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #003366; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 20px; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { padding: 20px; display: flex; gap: 20px; }
+    .profile-card, .info-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .profile-card { flex: 1; text-align: center; }
+    .profile-card img { border-radius: 50%; width: 100px; height: 100px; }
+    .info-section { margin-bottom: 20px; }
+    .info-section h3 { border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; }
+    .info-row { display: flex; justify-content: space-between; margin: 5px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    .status-active {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Salary Components</h1>
+    <nav>
+      <a href="dashboard.html">Dashborad</a>
+      <a href="userdetails.html">User Details</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Earning Type</th>
+        <th>Calculation Type</th>
+        <th>Consider for EPF</th>
+        <th>Consider for ESI</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Basic</td>
+        <td>Basic</td>
+        <td>Fixed; 50% of CTC</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td class="status-active">Active</td>
+      </tr>
+      <tr>
+        <td>House Rent Allowance</td>
+        <td>HRA</td>
+        <td>Fixed; 50% of Basic</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td class="status-active">Active</td>
+      </tr>
+      <tr>
+        <td>Conveyance Allowance</td>
+        <td>Allowance</td>
+        <td>Fixed; Flat Amount</td>
+        <td>No</td>
+        <td>No</td>
+        <td class="status-active">Active</td>
+      </tr>
+      <tr>
+        <td>Bonus</td>
+        <td>Bonus</td>
+        <td>Variable; Flat Amount</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td class="status-active">Active</td>
+      </tr>
+      <tr>
+        <td>Commission</td>
+        <td>Commission</td>
+        <td>Variable; Flat Amount</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td class="status-active">Active</td>
+      </tr>
+      <tr>
+        <td>Leave Encashment</td>
+        <td>Leave Encashment</td>
+        <td>Variable; Flat Amount</td>
+        <td>No</td>
+        <td>No</td>
+        <td class="status-active">Active</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function logout() {
+      alert("You have been logged out.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
