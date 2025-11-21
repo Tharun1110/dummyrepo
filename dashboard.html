@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mooorepay Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+        }
+        .navbar {
+            background: #0073e6;
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+		header { 
+			background: #003366; 
+			color: white; 
+			padding: 15px; 
+			display: flex; 
+			justify-content: 
+			space-between; 
+			align-items: center; 
+		}
+    	header h1 { margin: 0; font-size: 20px; }
+    	nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+    	nav a:hover { text-decoration: underline; }
+
+        .container {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #0073e6;
+        }
+        .metric {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        .metric-label {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .logout-btn {
+            background: #ff4d4d;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		.card-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.button {
+			display: inline-block;
+			padding: 0.5rem 1rem;
+			background: #0073e6;
+			color: white;
+			text-align: center;
+			border-radius: 5px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		.button:hover {
+			background: #005bb5;
+		}
+    </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="userdetails.html">User Details</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+    <div class="container">
+		<div class="card">
+			<div class="card-header">
+				<h3>Payroll Summary</h3>
+				<a href="salary_details.html" class="button">Salary Component</a>
+			</div>
+			<div class="metric">120</div>
+			<div class="metric-label">Employees Paid</div>
+			<div class="metric">₹ 8,50,000</div>
+			<div class="metric-label">Total Payroll Cost</div>
+			<div class="metric">3</div>
+			<div class="metric-label">Pending Payrolls</div>
+		</div>
+        <div class="card">
+            <h3>Leave & Attendance</h3>
+            <div class="metric">8%</div>
+            <div class="metric-label">Absenteeism Rate</div>
+            <div class="metric">7.5 hrs</div>
+            <div class="metric-label">Avg. Working Hours</div>
+        </div>
+
+        <div class="card">
+            <h3>Hr Statistics</h3>
+            <div class="metric">5</div>
+            <div class="metric-label">New Hires This Month</div>
+            <div class="metric">450</div>
+            <div class="metric-label">Active Employees</div>
+            <div class="metric">2.1%</div>
+            <div class="metric-label">Attrition Rate</div>
+        </div>
+    </div>
+
+    <script>
+        // Check session
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
+

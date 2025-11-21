@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>user Details - Morepay</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #003366; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 20px; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { padding: 20px; display: flex; gap: 20px; }
+    .profile-card, .info-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .profile-card { flex: 1; text-align: center; }
+    .profile-card img { border-radius: 50%; width: 100px; height: 100px; }
+    .info-section { margin-bottom: 20px; }
+    .info-section h3 { border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; }
+    .info-row { display: flex; justify-content: space-between; margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moorepay User Details</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="userdetails.html">User Details</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile-card">
+      <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png   " alt="Profile Photo">
+      <h2>Meera Krishnan (ID12345)</h2>
+      <p>Senior Engineer</p>
+      <p><strong>Email:</strong> meerakrishnan@zylkercorp.com</p>
+      <p><strong>DOJ:</strong> 02/04/2016</p>
+      <p><strong>Department:</strong> Banking & Financial Service</p>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-card" style="flex:2;">
+      <div class="info-section">
+        <h3>Personal Information</h3>
+        <div class="info-row"><span>Date of Birth</span><span>31/12/1985</span></div>
+        <div class="info-row"><span>Father's Name</span><span>Krishnan</span></div>
+        <div class="info-row"><span>PAN</span><span>AAAAA0000A</span></div>
+        <div class="info-row"><span>Contact Email</span><span>meera.krish@heximail.com</span></div>
+        <div class="info-row"><span>Mobile</span><span>+91 98765 43210</span></div>
+        <div class="info-row"><span>Address</span><span>99, Jagadesh Society, Chennai - 600001</span></div>
+      </div>
+
+      <div class="info-section">
+        <h3>Payment Information</h3>
+        <div class="info-row"><span>Payment Mode</span><span>Bank Transfer</span></div>
+        <div class="info-row"><span>Account Number</span><span>XXXX1234</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

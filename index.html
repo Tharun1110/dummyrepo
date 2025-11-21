@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moorepay Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+        }
+        .login-container {
+            width: 300px;
+            margin: 80px auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #0073e6;
+        }
+        input {
+            width: 100%;
+            padding: 0.6rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 0.6rem;
+            background: #0073e6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="login()">Sign In</button>
+        <div id="error" class="error"></div>
+    </div>
+
+    <script>
+        // Check session
+        if (localStorage.getItem("loggedIn") === "true") {
+            window.location.href = "dashboard.html";
+        }
+
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+            const errorDiv = document.getElementById("error");
+
+            if (user === "admin" && pass === "password123") {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "dashboard.html";
+            } else {
+                errorDiv.textContent = "Please enter the vald username and password";
+            }
+        }
+    </script>
+</body>
+</html>
+
